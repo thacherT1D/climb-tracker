@@ -20,9 +20,7 @@ const person = (props) => {
 
     return (
         <StyledDiv>
-            <p onClick={props.click}>I'm {props.name} and {props.feeling} people who are {props.age} years old</p>
-            <p>{props.children}</p>
-            <input type="text" onChange={props.changed} value={props.name}/>
+            <p>Person Component</p>
         </StyledDiv>
         
     );
