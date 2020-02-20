@@ -7,6 +7,7 @@ Basic React App built to sandbox react features
 ### Using: 
 - React
 - Styled Components
+    - Stylelint
 - Rebass
 - Storybook.js
 
@@ -22,6 +23,12 @@ Basic React App built to sandbox react features
 ### Storybook
 
 To run your storybook, type: `yarn storybook`
+
+
+### Stylelint
+
+`npx stylelint "**/*.css"`
+
 
 ### Learn More
 

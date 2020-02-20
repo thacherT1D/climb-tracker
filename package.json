@@ -40,6 +40,8 @@
     "@storybook/addon-links": "^5.3.8",
     "@storybook/addons": "^5.3.8",
     "@storybook/preset-create-react-app": "^1.5.2",
-    "@storybook/react": "^5.3.8"
+    "@storybook/react": "^5.3.8",
+    "stylelint": "^13.2.0",
+    "stylelint-config-standard": "^20.0.0"
   }
 }
