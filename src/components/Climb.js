@@ -14,9 +14,13 @@ const StyledDiv = styled.div`
 `;
 
 const climb = (props) => (
-  <StyledDiv>
+  <StyledDiv {...props} >
     <p>Climb Component</p>
   </StyledDiv>
 );
 
 export default climb;
+
+
+//Set dependencies to match blip and then build rebass components here
+//Using stories for development
