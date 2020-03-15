@@ -1,30 +1,67 @@
-import React from 'react';
-import { Button as Base } from 'rebass/styled-components';
-import styled from 'styled-components';
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import { Button as Base, Box, ButtonProps } from 'rebass/styled-components';
+import styled, { ThemeContext } from 'styled-components';
+import cx from 'classnames';
 
 import { ButtonFont } from './FontStyles';
 
 import {
   transitions,
-  colors,
 } from '../themes/baseTheme';
 
 const StyledButton = styled(Base)`
   cursor: pointer;
   transition: ${transitions.easeOut};
-  background-color: ${colors.purpleMedium};
-  &:hover {
-    background-color: ${colors.purpleLight};
-    color: ${colors.text.primary};
-  }
-  `;
+  position: relative;
 
-const Button = props => {
+  &:disabled {
+    pointer-events: none;
+  }
+
+  &.processing {
+    pointer-events: none;
+    line-height: 0;
+
+    ${ButtonFont} {
+      visibility: hidden;
+    }
+  }
+`;
+
+const StyledCircularProgress = styled(Box)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+export const Button = props => {
+  const { children, processing, ...buttonProps } = props;
+  const classNames = cx({ processing });
+
+  const themeContext = useContext(ThemeContext);
+
   return (
-    <StyledButton>
-      <ButtonFont>{props.text}</ButtonFont>
+    <StyledButton {...buttonProps} className={classNames}>
+      <ButtonFont>{children}</ButtonFont>
+      { processing && (
+        <StyledCircularProgress>
+          <CircularProgress
+            color="inherit"
+            size={themeContext.fontSizes[3]}
+            thickness={5}
+          />
+        </StyledCircularProgress>
+      )}
     </StyledButton>
   );
+};
+
+Button.propTypes = {
+  ...ButtonProps,
+  processing: PropTypes.bool,
 };
 
 export default Button;
