@@ -90,6 +90,21 @@ export const buttons = {
   },
 };
 
+export const forms = {
+  input: {
+    
+  },
+  select: {
+    borderRadius: 9999,
+  },
+  textarea: {},
+  label: {
+    color: `${colors.purpleMedium}`,
+  },
+  radio: {},
+  checkbox: {},
+};
+
 export default {
   breakpoints,
   buttons,
@@ -97,6 +112,7 @@ export default {
   fonts,
   fontSizes,
   fontWeights,
+  forms,
   lineHeights,
   mediaQueries,
   radii,
