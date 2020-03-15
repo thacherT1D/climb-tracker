@@ -54,7 +54,7 @@ CheckboxStory.story = {
   },
 };
 
-export const CheckboxMaterialStory = () => {
+export const MaterialCheckboxStory = () => {
   const [isChecked, setChecked] = useState(false);
   const toggleCheckbox = () => setChecked(!isChecked);
 
@@ -65,6 +65,21 @@ export const CheckboxMaterialStory = () => {
   );
 };
 
-CheckboxMaterialStory.story = {
+MaterialCheckboxStory.story = {
   name: 'Material UI Checkbox',
+}
+
+export const RebassCheckboxStory = () => {
+  const [isChecked, setChecked] = useState(false);
+  const toggleCheckbox = () => setChecked(!isChecked);
+
+  const labelText = () => text('Label Text', 'Check Me');
+
+  return (
+    <CheckboxMaterial label={labelText()} />
+  );
+};
+
+RebassCheckboxStory.story = {
+  name: 'Rebass Checkbox',
 }
