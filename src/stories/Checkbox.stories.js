@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 import { withDesign } from 'storybook-addon-designs';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { ThemeProvider } from 'styled-components';
+import { Text } from 'rebass/styled-components';
 
 import baseTheme from '../themes/baseTheme';
 
 import Checkbox from '../components/Checkbox';
 import CheckboxMaterial from '../components/CheckboxMaterial';
 import CheckboxRebass from '../components/CheckboxRebass'; 
-import { CheckboxGroupTitle } from '../components/FontStyles';
+import { CheckboxGroupTitle, Caption } from '../components/FontStyles';
 
 
 const withTheme = Story => (
@@ -73,10 +74,15 @@ export const RebassCheckboxStory = () => {
   const [isChecked, setChecked] = useState(false);
   const toggleCheckbox = () => setChecked(!isChecked);
 
-  const labelText = () => text('Label Text', 'Check Me');
+  const labelText = () => text('Label Text', 'Option 1');
 
   return (
-    <CheckboxMaterial label={labelText()} />
+    <div>
+      <Caption>Rebass Checkbox</Caption>
+      <CheckboxRebass 
+        label={labelText()}
+      />
+    </div>
   );
 };
 

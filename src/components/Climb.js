@@ -9,7 +9,7 @@ import {
 const StyledDiv = styled.div`
   width: 60%;
   margin: 16px auto;
-  border: 1px solid #eEe;
+  border: 1px solid #eee;
   box-shadow: 0 2px 3px #ccc;
   padding: 16px;
   text-align: center;
@@ -44,7 +44,3 @@ const climb = (props) => (
 );
 
 export default climb;
-
-
-//Set dependencies to match blip and then build rebass components here
-//Using stories for development

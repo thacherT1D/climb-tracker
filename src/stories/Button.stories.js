@@ -10,7 +10,6 @@ import Button from '../components/Button';
 
 /* eslint-disable max-len */
 
-// Wrap each story component with the base theme
 const withTheme = Story => (
   <ThemeProvider theme={baseTheme}>
     <Story />
